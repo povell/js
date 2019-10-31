@@ -1,0 +1,100 @@
+.chess-board {
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 30px repeat(8, 1fr) 30px;
+    grid-template-rows: 30px repeat(8, 1fr) 30px; 
+    grid-template-areas: /*такая разметка для возможности изменения размеров доски*/
+        "t t t t t t t t t t"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+    "l cb cb cb cb cb cb cb cb r"
+        "b b b b b b b b b b";
+}
+
+.points-panel {
+    display: flex;
+    background-color: #88714f;
+    color: #dab681;;
+}
+
+.points-panel__cell {
+    flex-basis: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+.points-panel_top {
+    grid-area: t;
+    padding: 0 30px;
+    flex-direction: row-reverse;
+}
+
+.points-panel_left {
+    grid-area: l;
+	flex-direction: column;
+}
+
+.points-panel_left .points-panel__cell,
+.points-panel_right .points-panel__cell {
+    padding-top: 10px;
+}
+
+.points-panel_top .points-panel__cell, 
+.points-panel_right .points-panel__cell {
+    transform: rotate(180deg);
+}
+
+.points-panel_right {
+    grid-area: r;
+    flex-direction: column;
+}
+
+.points-panel_bottom {
+    grid-area: b;
+    padding: 0 30px;
+    flex-direction: row-reverse;
+}
+
+.cells-box {
+    grid-area: cb;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 1px solid black;
+}
+
+.cells-box__cell {
+    border: 1px solid black;
+}
+
+.cells-box__cell_white {
+    background-color: #dab681;
+}
+
+.cells-box__cell_black {
+    background-color: #88714f;
+}
+
+.figure {
+    text-align: center;
+    font-size: 25px;
+    line-height: 40px; /*TODO отцентровать без стат парам для возможности изменения размеров доски*/
+    cursor: pointer;
+}
+
+.figure_white {
+    color: white;
+}
+
+.figure_black {
+    color: black;
+}
