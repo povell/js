@@ -1,0 +1,42 @@
+.basket {
+    border: 1px solid grey;
+    margin-bottom: 10px;
+    height: 300px;
+}
+
+.basket__articles {
+    height: 280px;
+}
+
+.articles {
+    display: flex;
+    cursor: pointer;
+}
+
+.article {
+    width: 300px;
+    border: 1px solid grey;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.article:last-child {
+    margin-right: 0;
+}
+
+.article__name {
+    text-align: center;
+}
+
+.article__img {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 10px auto;
+}
+button {
+    cursor: pointer;
+}
